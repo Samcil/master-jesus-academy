@@ -84,7 +84,7 @@ export default function ContactInfoSection() {
             className="rounded-2xl overflow-hidden shadow-card"
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15881.847!2d-0.246933!3d5.659137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMzknMzMuMSJOIDDCsDE0JzQ5LjAiVw!5e0!3m2!1sen!2sgh!4v1234567890"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.35!2d-0.2575218!3d5.6620367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9fc6e1feeffd%3A0x9950ef57561e73d8!2sMaster%20Jesus%20Academy!5e0!3m2!1sen!2sgh!4v1709164800000"
               width="100%"
               height="400"
               style={{ border: 0 }}
