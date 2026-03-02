@@ -78,6 +78,14 @@ export default function ContactInfoSection() {
                 </div>
               </div>
             </div>
+
+            <div className="mt-8 rounded-xl border border-primary/15 bg-primary-50 p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-primary/80">Social Handles</p>
+              <p className="mt-2 text-sm text-primary">
+                Instagram/Facebook/YouTube: {SCHOOL.socialHandles.primary}
+              </p>
+              <p className="text-sm text-primary">X: {SCHOOL.socialHandles.x}</p>
+            </div>
           </motion.div>
 
           <motion.div

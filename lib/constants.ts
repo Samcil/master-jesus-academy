@@ -17,8 +17,16 @@ export const SCHOOL = {
     role: 'Owner & Principal',
   },
   levels: ['Nursery', 'Primary', 'Junior High School'],
+  socialHandles: {
+    primary: '@masterjesusacademygh',
+    x: '@mja_taifa',
+  },
   socialLinks: {
-    facebook: 'https://facebook.com/masterjesusacademy',
+    facebook: 'https://facebook.com/masterjesusacademygh',
+    instagram: 'https://instagram.com/masterjesusacademygh',
+    youtube: 'https://youtube.com/@masterjesusacademygh',
+    tiktok: 'https://www.tiktok.com/@masterjesusacademygh',
+    x: 'https://x.com/mja_taifa',
     whatsapp: 'https://wa.me/233208174744',
   },
 } as const

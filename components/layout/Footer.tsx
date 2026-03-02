@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Facebook, MessageCircle, MapPin, Mail, Phone, Clock } from 'lucide-react'
+import { Facebook, MessageCircle, MapPin, Mail, Phone, Clock, Instagram, Youtube } from 'lucide-react'
 import Logo from '@/components/brand/Logo'
 import { SCHOOL } from '@/lib/constants'
 
@@ -33,6 +33,9 @@ export default function Footer() {
               A premier Nursery, Primary and Junior High School in Taifa, Greater Accra,
               dedicated to academic excellence and the holistic development of every child.
             </p>
+            <p className="text-xs text-white/60">
+              Follow us: <span className="text-secondary">{SCHOOL.socialHandles.primary}</span>
+            </p>
             <div className="flex items-center gap-3 pt-2">
               <a
                 href={SCHOOL.socialLinks.facebook}
@@ -44,6 +47,24 @@ export default function Footer() {
                 <Facebook className="w-5 h-5" />
               </a>
               <a
+                href={SCHOOL.socialLinks.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="p-2 rounded-full bg-white/10 hover:bg-secondary/20 transition-colors"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a
+                href={SCHOOL.socialLinks.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+                className="p-2 rounded-full bg-white/10 hover:bg-secondary/20 transition-colors"
+              >
+                <Youtube className="w-5 h-5" />
+              </a>
+              <a
                 href={SCHOOL.socialLinks.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -51,6 +72,15 @@ export default function Footer() {
                 className="p-2 rounded-full bg-white/10 hover:bg-secondary/20 transition-colors"
               >
                 <MessageCircle className="w-5 h-5" />
+              </a>
+            </div>
+            <div className="flex items-center gap-3 text-xs text-white/70">
+              <a href={SCHOOL.socialLinks.tiktok} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                TikTok
+              </a>
+              <span className="text-white/30">|</span>
+              <a href={SCHOOL.socialLinks.x} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                X ({SCHOOL.socialHandles.x})
               </a>
             </div>
           </div>
