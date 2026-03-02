@@ -21,6 +21,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const pathname = usePathname()
+  const isHeroMode = pathname === '/' && !scrolled && !mobileOpen
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50)
@@ -46,12 +47,12 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled || mobileOpen
           ? 'bg-white/95 backdrop-blur-md shadow-soft'
-          : 'bg-transparent'
+          : 'bg-primary-dark/45 backdrop-blur-sm'
       }`}
     >
       <nav className="container-max flex items-center justify-between h-16 lg:h-20">
         {/* Logo */}
-        <Logo size="md" showText />
+        <Logo size="md" showText light={isHeroMode} />
 
         {/* Desktop links */}
         <div className="hidden lg:flex items-center gap-1">
@@ -59,12 +60,14 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`relative px-3 py-2 text-sm font-medium transition-colors rounded-lg hover:bg-primary/5 ${
+              className={`relative px-3 py-2 text-sm font-medium transition-colors rounded-lg ${isHeroMode ? 'hover:bg-white/10' : 'hover:bg-primary/5'} ${
                 isActive(link.href)
-                  ? 'text-primary after:absolute after:bottom-0 after:left-3 after:right-3 after:h-0.5 after:bg-secondary after:rounded-full'
+                  ? isHeroMode
+                    ? 'text-secondary-200 after:absolute after:bottom-0 after:left-3 after:right-3 after:h-0.5 after:bg-secondary-200 after:rounded-full'
+                    : 'text-primary after:absolute after:bottom-0 after:left-3 after:right-3 after:h-0.5 after:bg-secondary after:rounded-full'
                   : scrolled
                     ? 'text-gray-700 hover:text-primary'
-                    : 'text-gray-800 hover:text-primary'
+                    : 'text-white/95 hover:text-white'
               }`}
             >
               {link.label}
@@ -80,7 +83,7 @@ export default function Navbar() {
         {/* Mobile hamburger */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+          className={`lg:hidden p-2 rounded-lg transition-colors ${isHeroMode ? 'text-white hover:bg-white/10' : 'hover:bg-gray-100 text-primary'}`}
           aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={mobileOpen}
         >

@@ -14,7 +14,7 @@ const sizeMap = {
 
 export default function Logo({ size = 'md', showText = false, light = false }: LogoProps) {
   const s = sizeMap[size]
-  const primary = light ? '#FFFFFF' : '#1B3A6B'
+  const primary = light ? '#FFFFFF' : '#16A34A'
   const gold = '#F59E0B'
   const white = '#FFFFFF'
   const textColor = light ? 'text-white' : 'text-primary'
@@ -41,7 +41,7 @@ export default function Logo({ size = 'md', showText = false, light = false }: L
         {/* Inner shield highlight */}
         <path
           d="M50 10L18 24V52C18 69 32 85 50 90C68 85 82 69 82 52V24L50 10Z"
-          fill={light ? 'rgba(255,255,255,0.08)' : '#152D54'}
+          fill={light ? 'rgba(255,255,255,0.08)' : '#14532D'}
         />
 
         {/* Rising sun / star rays at top */}

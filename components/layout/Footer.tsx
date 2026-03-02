@@ -20,7 +20,7 @@ const levels = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0F2240] text-white/90">
+    <footer className="bg-primary-dark text-white/90">
       <div className="container-max section-padding">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           {/* Column 1 — Brand */}
