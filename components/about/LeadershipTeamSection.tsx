@@ -1,43 +1,42 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { Crown, BookOpenText, HeartHandshake, Building2 } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
+import { SCHOOL } from '@/lib/constants'
 
-interface Leader {
-  name: string
+interface TeamCard {
   title: string
-  initials: string
-  bio: string
-  gradient: string
+  role: string
+  details: string
+  Icon: LucideIcon
+  accent: string
 }
 
-const leaders: Leader[] = [
+const supportTeams: TeamCard[] = [
   {
-    name: 'Mrs. Abena Mensah',
-    title: 'Head Teacher / Principal',
-    initials: 'AM',
-    bio: 'A passionate educator with over 15 years of experience in school leadership and curriculum development.',
-    gradient: 'from-primary to-primary-light',
+    title: 'Academic Coordination Team',
+    role: 'Curriculum & Quality Assurance',
+    details:
+      'Oversees lesson delivery, learning outcomes, and assessment standards across Nursery, Primary, and JHS.',
+    Icon: BookOpenText,
+    accent: 'text-primary',
   },
   {
-    name: 'Mr. Kofi Asante',
-    title: 'Deputy Head Teacher',
-    initials: 'KA',
-    bio: 'Dedicated to fostering a disciplined and nurturing learning environment for every student.',
-    gradient: 'from-secondary to-secondary-light',
+    title: 'Student Welfare Team',
+    role: 'Pastoral & Student Development',
+    details:
+      'Supports discipline, mentoring, and wellbeing so every student feels safe, encouraged, and included.',
+    Icon: HeartHandshake,
+    accent: 'text-accent',
   },
   {
-    name: 'Mrs. Akua Boateng',
-    title: 'Head of Academics',
-    initials: 'AB',
-    bio: 'An expert in modern pedagogy, committed to driving academic excellence across all levels.',
-    gradient: 'from-accent to-accent-light',
-  },
-  {
-    name: 'Mr. Emmanuel Darko',
-    title: 'Head of Administration',
-    initials: 'ED',
-    bio: 'Ensures smooth operations and a well-organized school environment for staff and students alike.',
-    gradient: 'from-primary-light to-accent',
+    title: 'School Administration Team',
+    role: 'Operations & Parent Relations',
+    details:
+      'Coordinates admissions, communication, and day-to-day systems that keep the school running smoothly.',
+    Icon: Building2,
+    accent: 'text-secondary-700',
   },
 ]
 
@@ -50,35 +49,54 @@ export default function LeadershipTeamSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="mb-12 text-center"
         >
-          <h2 className="section-title mb-4">Meet Our Leadership</h2>
+          <h2 className="section-title mb-4">Leadership</h2>
           <p className="section-subtitle mx-auto">
-            Dedicated professionals guiding Master Jesus Academy toward excellence every day.
+            Guided by clear vision and community-centered leadership.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {leaders.map((leader, i) => (
-            <motion.div
-              key={leader.name}
-              initial={{ opacity: 0, y: 30 }}
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.55 }}
+          className="rounded-3xl border border-primary/15 bg-white p-8 shadow-card md:p-10"
+        >
+          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">
+                <Crown className="h-3.5 w-3.5" />
+                {SCHOOL.principal.role}
+              </div>
+              <h3 className="mt-3 font-serif text-4xl text-primary">{SCHOOL.principal.name}</h3>
+              <p className="mt-3 max-w-2xl text-neutral-600">
+                {SCHOOL.principal.name} leads Master Jesus Academy with a strong commitment to academic
+                excellence, Christian values, and a nurturing school culture where every learner is
+                encouraged to grow in confidence and character.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
+        <div className="mt-8 grid gap-6 md:grid-cols-3">
+          {supportTeams.map((team, idx) => (
+            <motion.article
+              key={team.title}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-white rounded-2xl shadow-card p-8 text-center hover:shadow-elevated hover:-translate-y-1 transition-all duration-300"
+              transition={{ duration: 0.45, delay: idx * 0.08 }}
+              className="rounded-2xl border border-primary/10 bg-white p-6 shadow-soft"
             >
-              {/* Initials avatar */}
-              <div
-                className={`w-20 h-20 mx-auto rounded-full bg-gradient-to-br ${leader.gradient} flex items-center justify-center mb-5`}
-              >
-                <span className="text-2xl font-bold text-white">{leader.initials}</span>
-              </div>
-
-              <h3 className="font-serif text-xl font-bold text-primary">{leader.name}</h3>
-              <p className="text-secondary font-medium text-sm mt-1 mb-3">{leader.title}</p>
-              <p className="text-neutral-500 text-sm leading-relaxed">{leader.bio}</p>
-            </motion.div>
+              <team.Icon className={`h-7 w-7 ${team.accent}`} />
+              <p className="mt-4 text-xs font-semibold uppercase tracking-[0.16em] text-neutral-500">
+                {team.role}
+              </p>
+              <h4 className="mt-2 font-serif text-2xl text-primary">{team.title}</h4>
+              <p className="mt-3 text-sm leading-relaxed text-neutral-600">{team.details}</p>
+            </motion.article>
           ))}
         </div>
       </div>

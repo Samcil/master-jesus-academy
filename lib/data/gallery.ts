@@ -10,9 +10,9 @@ export interface GalleryImage {
 }
 
 export const galleryImages: GalleryImage[] = [
-  { id: 1, src: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&auto=format&fit=crop', alt: 'Students in a bright classroom', category: 'classrooms', width: 800, height: 600 },
-  { id: 2, src: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&auto=format&fit=crop', alt: 'Students studying together', category: 'students', width: 800, height: 533 },
-  { id: 3, src: 'https://images.unsplash.com/photo-1588072432836-e10032774350?w=800&auto=format&fit=crop', alt: 'Children in learning activity', category: 'students', width: 800, height: 600 },
+  { id: 1, src: '/images/school/student-1.jpeg', alt: 'Master Jesus Academy students during class learning session', category: 'classrooms', width: 900, height: 700 },
+  { id: 2, src: '/images/school/student-2.jpeg', alt: 'Master Jesus Academy students collaborating in class', category: 'students', width: 900, height: 700 },
+  { id: 3, src: '/images/school/student-3.jpeg', alt: 'Master Jesus Academy students participating in school activity', category: 'students', width: 900, height: 700 },
   { id: 4, src: 'https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=800&auto=format&fit=crop', alt: 'Academic achievement ceremony', category: 'events', width: 800, height: 534 },
   { id: 5, src: 'https://images.unsplash.com/photo-1544717305-2782549b5136?w=800&auto=format&fit=crop', alt: 'School building exterior', category: 'classrooms', width: 800, height: 600 },
   { id: 6, src: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&auto=format&fit=crop', alt: 'Students at sports day', category: 'sports', width: 800, height: 533 },

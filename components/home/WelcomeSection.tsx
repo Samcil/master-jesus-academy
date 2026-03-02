@@ -1,70 +1,81 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { GraduationCap } from 'lucide-react'
+import { Quote, Crown } from 'lucide-react'
+import { SCHOOL } from '@/lib/constants'
 
 const values = ['Discipline', 'Excellence', 'Faith', 'Innovation']
 
-const slideLeft = {
-  hidden: { opacity: 0, x: -40 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
-}
-
-const slideRight = {
-  hidden: { opacity: 0, x: 40 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
-}
-
 export default function WelcomeSection() {
   return (
-    <section id="welcome" className="section-padding bg-white relative">
-      <div className="container-max grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
-        {/* Left — text */}
+    <section id="welcome" className="section-padding bg-white">
+      <div className="container-max grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
         <motion.div
-          variants={slideLeft}
-          initial="hidden"
-          whileInView="visible"
+          initial={{ opacity: 0, x: -24 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
         >
-          <h2 className="section-title mb-6">Welcome to Our Academy</h2>
-          <p className="text-gray-600 leading-relaxed mb-4">
-            Master Jesus Academy is a distinguished educational institution located in Taifa, Greater
-            Accra Region. We are committed to providing every child with an exceptional learning
-            experience that nurtures intellectual growth, builds character, and inspires a passion for
-            lifelong learning.
+          <p className="text-xs uppercase tracking-[0.2em] text-primary/80">From the Principal&apos;s Desk</p>
+          <h2 className="mt-4 section-title">Welcome to a School Built on Purpose</h2>
+
+          <p className="mt-5 text-neutral-600 leading-relaxed">
+            Master Jesus Academy serves families in Taifa and the wider Greater Accra community with a
+            clear mission: to raise students who excel academically and grow into responsible, confident
+            leaders.
           </p>
-          <p className="text-gray-600 leading-relaxed">
-            Our dedicated team of educators combines a rigorous academic curriculum aligned with the
-            Ghana Education Service standards with faith-based values, ensuring students develop into
-            well-rounded, confident individuals prepared for the challenges of tomorrow.
+          <p className="mt-4 text-neutral-600 leading-relaxed">
+            Under the leadership of <strong>{SCHOOL.principal.name}</strong>, {SCHOOL.principal.role},
+            the school continues to strengthen quality teaching, student support, and a faith-rooted
+            culture that values character as much as results.
           </p>
+
+          <div className="mt-6 rounded-2xl border border-primary/15 bg-primary-50 p-5">
+            <div className="mb-2 flex items-center gap-2 text-primary">
+              <Quote className="h-4 w-4" />
+              <p className="text-xs font-semibold uppercase tracking-[0.16em]">Leadership message</p>
+            </div>
+            <p className="font-serif text-2xl leading-tight text-primary">
+              &ldquo;Every child entrusted to us deserves structure, care, and the confidence to shine.&rdquo;
+            </p>
+          </div>
+
+          <div className="mt-6 flex flex-wrap gap-2">
+            {values.map((value) => (
+              <span
+                key={value}
+                className="rounded-full border border-primary/15 bg-white px-4 py-1.5 text-sm font-medium text-primary shadow-sm"
+              >
+                {value}
+              </span>
+            ))}
+          </div>
         </motion.div>
 
-        {/* Right — decorative card */}
         <motion.div
-          variants={slideRight}
-          initial="hidden"
-          whileInView="visible"
+          initial={{ opacity: 0, x: 24 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          className="flex justify-center"
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="relative"
         >
-          <div className="relative bg-gradient-to-br from-primary-50 to-primary-100 rounded-3xl p-10 flex flex-col items-center gap-6 shadow-card max-w-sm w-full">
-            <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center">
-              <GraduationCap className="w-12 h-12 text-primary" />
+          <div className="overflow-hidden rounded-[1.8rem] border border-primary/15 shadow-card">
+            <Image
+              src="/images/school/student-3.jpeg"
+              alt="Students of Master Jesus Academy focused during class"
+              width={900}
+              height={700}
+              className="h-[28rem] w-full object-cover"
+            />
+          </div>
+
+          <div className="absolute -bottom-7 left-6 right-6 rounded-2xl border border-white/60 bg-white/95 p-4 shadow-card backdrop-blur-sm">
+            <div className="flex items-center gap-2 text-secondary-700">
+              <Crown className="h-4 w-4" />
+              <p className="text-xs font-semibold uppercase tracking-wide">Owner & Principal</p>
             </div>
-            <h3 className="font-serif text-xl font-bold text-primary text-center">
-              Master Jesus Academy
-            </h3>
-            <div className="flex flex-wrap justify-center gap-2">
-              {values.map((v) => (
-                <span
-                  key={v}
-                  className="px-4 py-1.5 rounded-full text-sm font-medium bg-white text-primary shadow-sm"
-                >
-                  {v}
-                </span>
-              ))}
-            </div>
+            <p className="mt-1 font-serif text-2xl text-primary">{SCHOOL.principal.name}</p>
           </div>
         </motion.div>
       </div>
