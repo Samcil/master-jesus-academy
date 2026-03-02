@@ -77,7 +77,7 @@ export default function HeroSection() {
           >
             <div className="relative overflow-hidden rounded-[2rem] border border-white/15 shadow-elevated">
               <Image
-                src="/images/school/landing.jpeg"
+                src="/images/school/landing.webp"
                 alt="Master Jesus Academy students walking with books in Taifa"
                 width={980}
                 height={740}
@@ -92,7 +92,7 @@ export default function HeroSection() {
 
             <div className="absolute -bottom-8 -left-8 hidden w-52 overflow-hidden rounded-2xl border border-white/20 shadow-card sm:block">
               <Image
-                src="/images/school/building.jpeg"
+                src="/images/school/building.webp"
                 alt="Master Jesus Academy main school building"
                 width={520}
                 height={400}

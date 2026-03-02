@@ -131,7 +131,7 @@ export default function SchoolStorySection() {
 
                 <div className="mb-7 overflow-hidden rounded-xl border border-white/20">
                   <Image
-                    src="/images/school/building.jpeg"
+                    src="/images/school/building.webp"
                     alt="Master Jesus Academy main building"
                     width={960}
                     height={640}

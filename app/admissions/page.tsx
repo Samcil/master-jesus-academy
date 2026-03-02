@@ -17,20 +17,23 @@ export default function AdmissionsPage() {
     <>
       <PageHero
         title="Admissions"
-        subtitle="Join our family — applications open for 2025/2026"
+        subtitle="Join our family — applications open for 2026/2027"
         breadcrumb="Home / Admissions"
       />
       <section className="section-padding bg-white pb-0">
         <div className="container-max grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div className="overflow-hidden rounded-2xl border border-neutral-200 shadow-card">
+          <div className="relative overflow-hidden rounded-2xl border border-neutral-200 shadow-card">
             <Image
-              src="/images/school/admissions.jpeg"
+              src="/images/school/admissions.webp"
               alt="Master Jesus Academy admissions information banner"
               width={820}
               height={1200}
               className="w-full object-cover"
               priority
             />
+            <div className="absolute left-4 top-4 rounded-full bg-primary px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-white shadow-card">
+              Updated Intake: 2026/2027
+            </div>
           </div>
           <div>
             <p className="text-xs uppercase tracking-[0.18em] text-primary/80">Admissions Snapshot</p>

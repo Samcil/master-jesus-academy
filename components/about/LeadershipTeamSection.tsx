@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { Crown, BookOpenText, HeartHandshake, Building2 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { SCHOOL } from '@/lib/constants'
@@ -65,7 +66,7 @@ export default function LeadershipTeamSection() {
           className="rounded-3xl border border-primary/15 bg-white p-8 shadow-card md:p-10"
         >
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-            <div>
+            <div className="flex-1">
               <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">
                 <Crown className="h-3.5 w-3.5" />
                 {SCHOOL.principal.role}
@@ -76,6 +77,15 @@ export default function LeadershipTeamSection() {
                 excellence, Christian values, and a nurturing school culture where every learner is
                 encouraged to grow in confidence and character.
               </p>
+            </div>
+            <div className="overflow-hidden rounded-2xl border border-primary/20 shadow-soft md:w-64">
+              <Image
+                src="/images/school/principal.webp"
+                alt="Mrs Cecilia Amoh, Owner and Principal of Master Jesus Academy"
+                width={520}
+                height={620}
+                className="h-72 w-full object-cover object-top"
+              />
             </div>
           </div>
         </motion.div>

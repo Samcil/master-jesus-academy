@@ -1,6 +1,6 @@
 export const SCHOOL = {
   name: 'Master Jesus Academy',
-  tagline: 'Nurturing Minds, Building Futures',
+  tagline: 'Master Jesus Academy, God is faithful.',
   address: '10 Wayo Street, Near Obo Hene Residence (Kristo Asafo Building), Taifa, Accra',
   postalCode: 'GE-303-0626',
   email: 'masterjesusacademy@gmail.com',

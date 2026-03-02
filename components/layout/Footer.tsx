@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { Facebook, MessageCircle, MapPin, Mail, Phone, Clock, Instagram, Youtube } from 'lucide-react'
+import Image from 'next/image'
+import { MapPin, Mail, Phone, Clock } from 'lucide-react'
 import Logo from '@/components/brand/Logo'
 import { SCHOOL } from '@/lib/constants'
 
@@ -16,6 +17,15 @@ const levels = [
   { label: 'Nursery', desc: 'Ages 2–4' },
   { label: 'Primary', desc: 'Ages 5–11' },
   { label: 'Junior High School', desc: 'Ages 12–15' },
+]
+
+const socialPlatforms = [
+  { name: 'Facebook', href: SCHOOL.socialLinks.facebook, icon: '/images/social/facebook.png' },
+  { name: 'Instagram', href: SCHOOL.socialLinks.instagram, icon: '/images/social/instagram.png' },
+  { name: 'YouTube', href: SCHOOL.socialLinks.youtube, icon: '/images/social/youtube.png' },
+  { name: 'WhatsApp', href: SCHOOL.socialLinks.whatsapp, icon: '/images/social/whatsapp.png' },
+  { name: 'TikTok', href: SCHOOL.socialLinks.tiktok, icon: '/images/social/tiktok.png' },
+  { name: 'X', href: SCHOOL.socialLinks.x, icon: '/images/social/x.png' },
 ]
 
 export default function Footer() {
@@ -36,52 +46,23 @@ export default function Footer() {
             <p className="text-xs text-white/60">
               Follow us: <span className="text-secondary">{SCHOOL.socialHandles.primary}</span>
             </p>
-            <div className="flex items-center gap-3 pt-2">
-              <a
-                href={SCHOOL.socialLinks.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="p-2 rounded-full bg-white/10 hover:bg-secondary/20 transition-colors"
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a
-                href={SCHOOL.socialLinks.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="p-2 rounded-full bg-white/10 hover:bg-secondary/20 transition-colors"
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a
-                href={SCHOOL.socialLinks.youtube}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="YouTube"
-                className="p-2 rounded-full bg-white/10 hover:bg-secondary/20 transition-colors"
-              >
-                <Youtube className="w-5 h-5" />
-              </a>
-              <a
-                href={SCHOOL.socialLinks.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="WhatsApp"
-                className="p-2 rounded-full bg-white/10 hover:bg-secondary/20 transition-colors"
-              >
-                <MessageCircle className="w-5 h-5" />
-              </a>
+            <div className="flex flex-wrap items-center gap-3 pt-2">
+              {socialPlatforms.map((platform) => (
+                <a
+                  key={platform.name}
+                  href={platform.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={platform.name}
+                  className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-2 text-xs text-white/80 transition-colors hover:bg-secondary/20 hover:text-white"
+                >
+                  <Image src={platform.icon} alt={`${platform.name} favicon`} width={16} height={16} />
+                  <span>{platform.name}</span>
+                </a>
+              ))}
             </div>
-            <div className="flex items-center gap-3 text-xs text-white/70">
-              <a href={SCHOOL.socialLinks.tiktok} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                TikTok
-              </a>
-              <span className="text-white/30">|</span>
-              <a href={SCHOOL.socialLinks.x} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                X ({SCHOOL.socialHandles.x})
-              </a>
+            <div className="text-xs text-white/70">
+              <span className="text-white/50">X handle:</span> {SCHOOL.socialHandles.x}
             </div>
           </div>
 

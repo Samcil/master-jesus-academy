@@ -62,7 +62,7 @@ export default function WelcomeSection() {
         >
           <div className="overflow-hidden rounded-[1.8rem] border border-primary/15 shadow-card">
             <Image
-              src="/images/school/student-3.jpeg"
+              src="/images/school/student-3.webp"
               alt="Students of Master Jesus Academy focused during class"
               width={900}
               height={700}

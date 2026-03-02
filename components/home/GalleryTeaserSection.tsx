@@ -7,17 +7,17 @@ import { ArrowRight } from 'lucide-react'
 
 const featuredImages = [
   {
-    src: '/images/school/landing.jpeg',
+    src: '/images/school/landing.webp',
     alt: 'Master Jesus Academy students holding books and interacting',
     className: 'md:col-span-2 md:row-span-2',
   },
   {
-    src: '/images/school/playing-3.jpeg',
+    src: '/images/school/playing-3.webp',
     alt: 'Master Jesus Academy pupils enjoying outdoor play',
     className: '',
   },
   {
-    src: '/images/school/playing-5.jpeg',
+    src: '/images/school/playing-5.webp',
     alt: 'Master Jesus Academy children having fun during activity time',
     className: '',
   },

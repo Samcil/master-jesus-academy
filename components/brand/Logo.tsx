@@ -24,7 +24,7 @@ export default function Logo({ size = 'md', showText = false, light = false }: L
         style={{ width: s, height: s }}
       >
         <Image
-          src="/images/school/logo.jpeg"
+          src="/images/school/logo.webp"
           alt="Master Jesus Academy logo"
           width={s}
           height={s}

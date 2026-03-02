@@ -56,7 +56,7 @@ export default function FacilitiesIntroSection() {
           >
             <div className="overflow-hidden rounded-2xl border border-neutral-200 shadow-card">
               <Image
-                src="/images/school/building.jpeg"
+                src="/images/school/building.webp"
                 alt="Master Jesus Academy building"
                 width={960}
                 height={640}

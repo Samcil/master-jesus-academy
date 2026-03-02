@@ -97,7 +97,7 @@ export default function ContactInfoSection() {
           >
             <div className="overflow-hidden rounded-2xl border border-neutral-200 shadow-card">
               <Image
-                src="/images/school/street.jpeg"
+                src="/images/school/street.webp"
                 alt="Street marker of Master Jesus Academy"
                 width={520}
                 height={980}
