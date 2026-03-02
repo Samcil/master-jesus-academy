@@ -16,7 +16,7 @@ export default function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-primary-dark text-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(245,158,11,0.22),transparent_42%),radial-gradient(circle_at_bottom_left,rgba(5,150,105,0.24),transparent_45%)]" />
-      <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(15,34,64,0.94),rgba(15,34,64,0.65)_55%,rgba(15,34,64,0.25))]" />
+      <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(20,83,45,0.94),rgba(20,83,45,0.65)_55%,rgba(20,83,45,0.25))]" />
 
       <div className="relative container-max py-20 md:py-24 lg:py-28">
         <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
@@ -77,8 +77,8 @@ export default function HeroSection() {
           >
             <div className="relative overflow-hidden rounded-[2rem] border border-white/15 shadow-elevated">
               <Image
-                src="/images/school/student-1.jpeg"
-                alt="Master Jesus Academy students in class"
+                src="/images/school/landing.jpeg"
+                alt="Master Jesus Academy students walking with books in Taifa"
                 width={980}
                 height={740}
                 className="h-[26rem] w-full object-cover md:h-[30rem]"
@@ -92,8 +92,8 @@ export default function HeroSection() {
 
             <div className="absolute -bottom-8 -left-8 hidden w-52 overflow-hidden rounded-2xl border border-white/20 shadow-card sm:block">
               <Image
-                src="/images/school/student-2.jpeg"
-                alt="Students of Master Jesus Academy"
+                src="/images/school/building.jpeg"
+                alt="Master Jesus Academy main school building"
                 width={520}
                 height={400}
                 className="h-36 w-full object-cover"

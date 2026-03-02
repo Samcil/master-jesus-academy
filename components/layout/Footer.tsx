@@ -92,9 +92,17 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 shrink-0 text-secondary" />
-                <a href={`tel:${SCHOOL.phone.replace(/\s/g, '')}`} className="hover:text-white transition-colors">
-                  {SCHOOL.phone}
-                </a>
+                <div className="space-y-1">
+                  {SCHOOL.phoneAliases.map((phone) => (
+                    <a
+                      key={phone.alias}
+                      href={`tel:${phone.tel}`}
+                      className="block hover:text-white transition-colors"
+                    >
+                      {phone.alias}: {phone.number}
+                    </a>
+                  ))}
+                </div>
               </li>
               <li className="flex items-center gap-2.5">
                 <Clock className="w-4 h-4 shrink-0 text-secondary" />

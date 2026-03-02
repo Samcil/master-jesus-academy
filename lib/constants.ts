@@ -1,9 +1,14 @@
 export const SCHOOL = {
   name: 'Master Jesus Academy',
   tagline: 'Nurturing Minds, Building Futures',
-  address: 'GA East Municipal, Taifa, Greater Accra Region, Ghana',
-  email: 'info@masterjesusacademy.edu.gh',
-  phone: '+233 XX XXX XXXX',
+  address: '10 Wayo Street, Near Obo Hene Residence (Kristo Asafo Building), Taifa, Accra',
+  postalCode: 'GE-303-0626',
+  email: 'masterjesusacademy@gmail.com',
+  phone: '+233 20 817 4744',
+  phoneAliases: [
+    { alias: 'Main Office', number: '+233 20 817 4744', tel: '+233208174744' },
+    { alias: 'Admissions Desk', number: '+233 55 667 3012', tel: '+233556673012' },
+  ],
   mapUrl: 'https://www.google.com/maps/place/Master+Jesus+Academy/@5.6620367,-0.2549469,17z',
   mapPlaceId: '0xfdf9fc6e1feeffd:0x9950ef57561e73d8',
   coordinates: { lat: 5.6620367, lng: -0.2549469 },
@@ -14,6 +19,6 @@ export const SCHOOL = {
   levels: ['Nursery', 'Primary', 'Junior High School'],
   socialLinks: {
     facebook: 'https://facebook.com/masterjesusacademy',
-    whatsapp: 'https://wa.me/233XXXXXXXXX',
+    whatsapp: 'https://wa.me/233208174744',
   },
 } as const

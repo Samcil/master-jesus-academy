@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { MapPin, Phone, Mail, Quote } from 'lucide-react'
+import Image from 'next/image'
 import { SCHOOL } from '@/lib/constants'
 
 interface Milestone {
@@ -128,6 +129,16 @@ export default function SchoolStorySection() {
                   Visit our campus in the heart of Taifa, Greater Accra Region.
                 </p>
 
+                <div className="mb-7 overflow-hidden rounded-xl border border-white/20">
+                  <Image
+                    src="/images/school/building.jpeg"
+                    alt="Master Jesus Academy main building"
+                    width={960}
+                    height={640}
+                    className="h-44 w-full object-cover"
+                  />
+                </div>
+
                 <div className="space-y-5">
                   <div className="flex items-start gap-3">
                     <MapPin className="w-5 h-5 text-secondary mt-0.5 shrink-0" />
@@ -141,7 +152,11 @@ export default function SchoolStorySection() {
                     <Phone className="w-5 h-5 text-secondary mt-0.5 shrink-0" />
                     <div>
                       <p className="font-semibold text-sm text-white/90">Phone</p>
-                      <p className="text-white/70 text-sm">{SCHOOL.phone}</p>
+                      {SCHOOL.phoneAliases.map((phone) => (
+                        <p key={phone.alias} className="text-white/70 text-sm">
+                          {phone.alias}: {phone.number}
+                        </p>
+                      ))}
                     </div>
                   </div>
 
